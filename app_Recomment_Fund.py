@@ -10,6 +10,7 @@ with open('model_recoment_fund.pkl', 'rb') as file:
 # Function to recommend funds
 def recommend_items(input_item, model, items_to_recommend):
     possible_items = fund_tax_list
+    input_item = input_item.upper()
     if input_item in possible_items :
         predictions = [(input_item, item, model.predict(input_item, item).est) for item in possible_items if item not in input_item]
         recommendations = sorted(predictions, key=lambda x: x[2], reverse=True)[:items_to_recommend]
