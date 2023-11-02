@@ -35,7 +35,7 @@ with tab1:
     # Button to recommend funds
     if st.button("Recommend Funds"):
         recommended_items = recommend_items(input_item, model, 10)
-        st.write(f"Recommended items based on {input_item}: {recommended_items}")
+        st.write(f"Recommended items based on {input_item.upper()}: {recommended_items}")
 
 with tab2:
     st.header("🗃 : Recommend from CSV")
